@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    android:clickable="true"
+    android:elevation="120dp"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/bg_white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="12dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_white"
+            android:paddingStart="8dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="16dp">
+
+            <Button
+                android:id="@+id/bid_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/bid_cancel"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="16dp"
+                android:text="Bid" />
+
+            <Button
+                android:id="@+id/bid_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bid_amount_display"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white"
+                android:text="Cancel"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/bid_amount_display"
+                style="@style/EditTextStyle"
+                android:layout_below="@id/bid_amount_label"
+                android:hint="Enter Bid Amount in INR"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/bid_amount_label"
+                style="@style/LabelStyle"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="-8dp"
+                android:background="@color/bg_white"
+                android:text="Bid Amount" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

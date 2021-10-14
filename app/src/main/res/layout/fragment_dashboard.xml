@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context="com.anvay.cctvpartner.fragments.DashboardFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_white"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp">
+
+            <com.anvay.cctvpartner.utils.CardOptionView
+                android:id="@+id/completed_projects"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="@dimen/home_card_option_radius"
+                app:cardElevation="@dimen/home_card_option_elevation"
+                app:cardText="Completed Projects"
+                app:imageSrc="@drawable/icon_install"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/view_products"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.anvay.cctvpartner.utils.CardOptionView
+                android:id="@+id/view_products"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="@dimen/home_card_option_radius"
+                app:cardElevation="@dimen/home_card_option_elevation"
+                app:cardText="My Products"
+                app:imageSrc="@drawable/icon_install"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintLeft_toRightOf="@id/completed_projects"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.anvay.cctvpartner.utils.CardOptionView
+                android:id="@+id/add_camera"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/completed_projects"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="@dimen/home_card_option_radius"
+                app:cardElevation="@dimen/home_card_option_elevation"
+                app:cardText="Add Camera"
+                app:imageSrc="@drawable/icon_install"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/add_accessory"
+                app:layout_constraintTop_toBottomOf="@id/completed_projects" />
+
+            <com.anvay.cctvpartner.utils.CardOptionView
+                android:id="@+id/add_accessory"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_products"
+                android:layout_margin="16dp"
+                android:layout_toEndOf="@id/add_camera"
+                app:cardCornerRadius="@dimen/home_card_option_radius"
+                app:cardElevation="@dimen/home_card_option_elevation"
+                app:cardText="Add Accessories"
+                app:imageSrc="@drawable/icon_install"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toRightOf="@id/add_camera"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_products" />
+
+            <com.anvay.cctvpartner.utils.CardOptionView
+                android:id="@+id/shipped_orders"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/completed_projects"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="@dimen/home_card_option_radius"
+                app:cardElevation="@dimen/home_card_option_elevation"
+                app:cardText="Shipped Orders"
+                app:imageSrc="@drawable/icon_install"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/completed_orders"
+                app:layout_constraintTop_toBottomOf="@id/add_camera" />
+
+            <com.anvay.cctvpartner.utils.CardOptionView
+                android:id="@+id/completed_orders"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_products"
+                android:layout_margin="16dp"
+                android:layout_toEndOf="@id/add_camera"
+                app:cardCornerRadius="@dimen/home_card_option_radius"
+                app:cardElevation="@dimen/home_card_option_elevation"
+                app:cardText="Completed Orders"
+                app:imageSrc="@drawable/icon_install"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toRightOf="@id/shipped_orders"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_accessory" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="20dp" />
+</FrameLayout>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="32dp">
+
+            <Button
+                android:id="@+id/add_image_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="@color/white"
+                android:text="Set Product Image"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/edit_item"
+                style="@style/FullWidthRoundButton"
+                android:layout_below="@id/details"
+                android:layout_marginTop="32dp"
+                android:text="Edit Details"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/update_item"
+                style="@style/FullWidthRoundButton"
+                android:layout_below="@id/details"
+                android:layout_marginTop="32dp"
+                android:elevation="1dp"
+                android:text="Update Details"
+                android:visibility="invisible" />
+
+
+            <Button
+                android:id="@+id/add_item"
+                style="@style/FullWidthRoundButton"
+                android:layout_below="@id/details"
+                android:layout_marginTop="32dp"
+                android:elevation="2dp"
+                android:text="Add Product" />
+
+            <ImageView
+                android:id="@+id/image_display"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/add_image_button"
+                android:layout_marginStart="-16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="-16dp"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/sub_category_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_spinner_item"
+                android:entries="@array/camera_sub_category"
+                android:paddingStart="8dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
+
+            <Spinner
+                android:id="@+id/gst_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discount"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_spinner_item"
+                android:entries="@array/gst_list"
+                android:paddingStart="8dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/sub_category_spinner"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="-9dp"
+                android:background="@color/bg_white"
+                android:text="Sub-category"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/gst_spinner"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="-9dp"
+                android:background="@color/bg_white"
+                android:text="GST applied"
+                android:textSize="12sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/id"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_display"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/id_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Id"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/id"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/name_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Name"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/brand"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/brand_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Brand Name"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/category"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand"
+                android:layout_marginTop="@dimen/product_item_margin_top"
+                android:enabled="false">
+
+                <EditText
+                    android:id="@+id/category_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Category" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sku"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sub_category_spinner"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/sku_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="SKU"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sla"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sku"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/sla_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="SLA"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/m_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sla"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/m_name_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Manufacturer's Name"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/m_address"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/m_name"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/m_address_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Manufacturer's Address"
+                    android:maxLength="100" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/price"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/m_address"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/price_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Selling Price"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/discount"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price"
+                android:enabled="false"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/discount_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Discount Offered"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/quantity"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gst_spinner"
+                android:layout_marginTop="@dimen/product_item_margin_top">
+
+                <EditText
+                    android:id="@+id/quantity_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Stock Quantity"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/details"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quantity"
+                android:layout_marginTop="@dimen/product_item_margin_top"
+                app:helperText="maximum 300 characters"
+                app:helperTextEnabled="true">
+
+                <EditText
+                    android:id="@+id/details_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Product Details"
+                    android:maxLength="300" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/loading"
+        layout="@layout/layout_loading"
+        android:visibility="gone" />
+</FrameLayout>
